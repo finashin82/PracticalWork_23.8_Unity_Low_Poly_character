@@ -16,10 +16,12 @@ public class SwitchingWeapons : MonoBehaviour
         
     void Update()
     {
+        // Врашаем колесо мыши
         float wheelInput = Input.GetAxis("Mouse ScrollWheel");
         
         if (wheelInput > 0)
         {
+            // Проверяем индекс (чтобы не выходил за пределы массива)
             if (weapon >= 0 && weapon < lengthArray - 1)
             {
                 weapon++;
@@ -35,6 +37,7 @@ public class SwitchingWeapons : MonoBehaviour
         }
         else if (wheelInput < 0)
         {
+            // Проверяем индекс (чтобы не выходил за пределы массива)
             if (weapon > 0 && weapon <= lengthArray - 1)
             {
                 weapon--;                
@@ -50,6 +53,9 @@ public class SwitchingWeapons : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Сброс оружия
+    /// </summary>
     private void ResetWeapons()
     {
         for (int i = 0; i < weaponArray.Length; i++)
