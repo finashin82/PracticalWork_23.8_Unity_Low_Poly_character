@@ -11,13 +11,6 @@ public class AnimatorPlayer : MonoBehaviour
         animatorPlayer = GetComponent<Animator>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown("1"))
@@ -56,6 +49,9 @@ public class AnimatorPlayer : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Сброс всех анимаций и возвращение в исходное положение Idle
+    /// </summary>
     private void ResetAllAnimations()
     {
         animatorPlayer.SetBool("isMmaKick", false);
